@@ -1,7 +1,7 @@
+from pprint import pprint
 import requests
 
-SHEETY_PRICES_ENDPOINT = YOUR ENDPOINT HERE
-
+SHEETY_PRICES_ENDPOINT = "https://api.sheety.co/b6d6bb38db88d15dbe9a803892456637/flightDeals/prices"
 
 class DataManager:
 
@@ -12,7 +12,6 @@ class DataManager:
         response = requests.get(url=SHEETY_PRICES_ENDPOINT)
         data = response.json()
         self.destination_data = data["prices"]
-        # pprint(data)
         return self.destination_data
 
     def update_destination_codes(self):
